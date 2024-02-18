@@ -1,0 +1,17 @@
+package com.example.MedicalFriend.model.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class AdminResponse {
+    private Long adminId;
+    private String name;
+    private String email;
+    private HospitalResponse hospital;
+}

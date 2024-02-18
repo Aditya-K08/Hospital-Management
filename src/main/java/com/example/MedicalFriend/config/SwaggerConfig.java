@@ -1,0 +1,33 @@
+package com.example.MedicalFriend.config;
+
+
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class SwaggerConfig {
+
+    @Bean
+    public OpenAPI openAPI() {
+        String schemeName = "bearerScheme";
+        return new OpenAPI().info(getInfo());
+    }
+
+
+    private Info getInfo() {
+
+        Contact contact = new Contact();
+        contact.setEmail("ndmorkar@gmail.com");
+        contact.setName("Nilesh Morkar And Aditya Kute");
+        return new Info()
+                .title("Medical Friend Backend APIs")
+                .description("This Is (Medical Friend) Backend APIs For Hospital Management System Developed By Nilesh Morkar And Aditya Kute")
+                .contact(contact)
+                .version("v0.0.1")
+                .summary("Welcome !!");
+
+    }
+}
